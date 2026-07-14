@@ -1,0 +1,23 @@
+artifact_path: /home/alaa-mohammed/churn_ML_project/churn-telco-customer/mlruns/1/models/m-b574ac65d70a4cb38a43cf9b45ab815e/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.skops
+    predict_fn: predict
+    python_version: 3.14.4
+  sklearn:
+    code: null
+    pickled_model: model.skops
+    serialization_format: skops
+    sklearn_version: 1.9.0
+    skops_trusted_types: null
+mlflow_version: 3.14.0
+model_id: m-b574ac65d70a4cb38a43cf9b45ab815e
+model_size_bytes: 5128359
+model_uuid: m-b574ac65d70a4cb38a43cf9b45ab815e
+prompts: null
+run_id: f77a7bb2cf0d407dbc747149bfa177ab
+utc_time_created: '2026-07-13 22:34:32.588313'
