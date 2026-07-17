@@ -1,7 +1,4 @@
-try:
-    import streamlit as st  # type: ignore[import]
-except ImportError as e:
-    raise ImportError("'streamlit' is required to run this dashboard. Install it with: pip install streamlit") from e
+import streamlit as st
 import pandas as pd
 import pickle
 import json
@@ -14,15 +11,15 @@ feature_names = json.load(open('feature_names.json'))
 df = pd.read_csv('churn_dataset/WA_Fn-UseC_-Telco-Customer-Churn.csv')
 
 st.set_page_config(page_title="Churn Prediction Dashboard", layout="wide")
-st.title("Customer Churn Prediction Dashboard")
+st.title(" Customer Churn Prediction Dashboard")
 
 # ── KPIs ──────────────────────────────────────────
 st.header("Business KPIs")
 col1, col2, col3, col4 = st.columns(4)
 col1.metric("Total Customers", "7,032")
 col2.metric("Churn Rate", "26.5%", "-2.1%")
-col3.metric("At Risk Customers", "1,869")
-col4.metric("Model ROC-AUC", "0.833")
+col3.metric("At Risk Customers", "1,869", "🔴")
+col4.metric("Model ROC-AUC", "0.833", "✅")
 
 st.divider()
 
@@ -33,8 +30,7 @@ col1, col2, col3 = st.columns(3)
 with col1:
     tenure = st.slider("Tenure (months)", 0, 72, 12)
     monthly = st.number_input("Monthly Charges ($)", 0.0, 150.0, 65.0)
-    total_default = min(monthly * tenure, 9000.0)
-    total = st.number_input("Total Charges ($)", 0.0, 9000.0, total_default)
+    total = st.number_input("Total Charges ($)", 0.0, 9000.0, monthly * tenure)
 
 with col2:
     contract = st.selectbox("Contract Type", ["Month-to-month", "One year", "Two year"])
@@ -77,9 +73,9 @@ if st.button("🔮 Predict Churn", type="primary"):
     }
 
     scaler = StandardScaler()
-    df_input = pd.DataFrame([data]).reindex(columns=feature_names, fill_value=0)
+    df_input = pd.DataFrame([data])[feature_names]
     prob = model.predict_proba(df_input)[0][1]
-    risk = "High Risk" if prob > 0.7 else " Medium Risk" if prob > 0.4 else "🟢 Low Risk"
+    risk = "High Risk" if prob > 0.7 else "Medium Risk" if prob > 0.4 else "🟢 Low Risk"
 
     st.subheader("Prediction Result")
     col1, col2 = st.columns(2)
@@ -87,9 +83,9 @@ if st.button("🔮 Predict Churn", type="primary"):
     col2.metric("Risk Level", risk)
 
     if prob > 0.5:
-        st.error(" This customer is likely to churn! Consider sending a retention offer.")
+        st.error("This customer is likely to churn! Consider sending a retention offer.")
     else:
-        st.success("This customer is stable.")
+        st.success(" This customer is stable.")
 
 st.divider()
 
@@ -102,4 +98,3 @@ fig, ax = plt.subplots(figsize=(10, 5))
 importance.plot(kind='barh', ax=ax, color='#7c3aed')
 ax.set_title("Top 10 Features")
 st.pyplot(fig)
-
