@@ -204,6 +204,6 @@ GitHub: [@alaa-m0hammed](https://github.com/alaa-m0hammed)
 <div align="center">
 <sub>DEPI Capstone · Gradient Boosting · ROC-AUC 0.833 · Recall 78%</sub>
 </div>
-## License
+License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
