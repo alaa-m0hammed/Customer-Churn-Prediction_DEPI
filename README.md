@@ -4,12 +4,6 @@
 
 **DEPI Capstone Project · Digital Egypt Pioneers Initiative**
 
-[![Python](https://img.shields.io/badge/Python-3.14-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
-[![scikit-learn](https://img.shields.io/badge/scikit--learn-1.9-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)](https://scikit-learn.org)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.139-009688?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
-[![Docker](https://img.shields.io/badge/Docker-ready-2496ED?style=flat-square&logo=docker&logoColor=white)](https://docker.com)
-[![Streamlit](https://img.shields.io/badge/Streamlit-dashboard-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)](https://streamlit.io)
-[![MLflow](https://img.shields.io/badge/MLflow-tracked-0194E2?style=flat-square&logo=mlflow&logoColor=white)](https://mlflow.org)
 
 *A production-grade ML system that predicts which customers will churn — before they do.*
 
@@ -201,7 +195,7 @@ Class distribution: 73.5% No Churn · 26.5% Churn
 ## Author
 
 **Alaa Mohammed** · Backend Developer & Data Engineering Trainee  
-DEPI — Digital Egypt Pioneers Initiative (Microsoft × MCIT)  
+DEPI — Digital Egypt Pioneers Initiative (Microsoft in MCIT)  
 Helwan National University · Cairo, Egypt  
 GitHub: [@alaa-m0hammed](https://github.com/alaa-m0hammed)
 
@@ -210,3 +204,6 @@ GitHub: [@alaa-m0hammed](https://github.com/alaa-m0hammed)
 <div align="center">
 <sub>DEPI Capstone · Gradient Boosting · ROC-AUC 0.833 · Recall 78%</sub>
 </div>
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
